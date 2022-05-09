@@ -1,0 +1,19 @@
+.trending{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+}
+
+
+
+
+
+/* @media (max-width: 900px) {
+  h2 {
+
+  }
+} */

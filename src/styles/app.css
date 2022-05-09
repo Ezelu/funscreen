@@ -1,0 +1,44 @@
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  scroll-behavior: smooth;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+
+.app {
+  min-height: 100vh;
+  background: #39445a;
+  padding-top: 6%;
+  overflow: scroll;
+  padding-bottom: 5%;
+}
+
+
+
+
+
+
+@media (max-width: 900px){
+  .app {
+    padding-top: 8%;
+    width: 100%;
+  }
+
+  h1{
+    font-size: 6.4vw;
+  }
+}
+
+
+
+@media (max-width: 600px){
+  .app {
+    padding-top: 10%;
+    width: 100%;
+  }
+}
