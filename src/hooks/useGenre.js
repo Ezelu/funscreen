@@ -5,5 +5,8 @@ const useGenres = (selected_genres) => {
   }
 
   const genre_ids = selected_genres.map(each => each.id);
-  return genre_ids.reduce();
+  return genre_ids.reduce((acc, curr) => acc + "," + curr);
 }
+
+
+export default useGenres;
