@@ -37,6 +37,7 @@ export default function CustomPagination({set_page, numberOfPages = 10}){
 
       <ThemeProvider theme={darkTheme}>
         <Pagination
+          style={{fontFamily: 'Lucida Sans'}}
           count={numberOfPages} 
           onChange={(e) => handle_page_change(e.target.textContent)}/>
       </ThemeProvider>
