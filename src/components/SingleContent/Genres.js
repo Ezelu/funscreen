@@ -65,7 +65,8 @@ export default function Genres(props){
                     clickable 
                     color='primary'
                     size='small'
-                    key={each.id} />
+                    key={each.id}
+                    onDelete ={() => handle_remove(each)} />
         })
       }
       
