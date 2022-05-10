@@ -17,7 +17,7 @@ export default function Genres(props){
     set_loading(false);
     set_genres(data.genres)
   };
-
+ 
 
 
   React.useEffect(() => {
@@ -29,8 +29,19 @@ export default function Genres(props){
 
 
   function handle_add (genre) {
-    set_selected_genres(prev => [...prev, genre])
+    set_selected_genres(prev => [...prev, genre]);
+    set_genres(genres.filter((g) => g.id !== genre.id));
+    set_page(1)
   }
+
+  function handle_remove (genre) {
+    set_selected_genres(
+      selected_genres.filter((selected) => selected.id !== genre.id)
+    );
+    set_genres(prev => [...prev, genre]);
+    set_page(1);
+  }
+
 
 
 
@@ -44,6 +55,20 @@ export default function Genres(props){
 
   return (
     <div style={{paddingTop: '2%'}}>
+
+      { loading ? 
+        <LinearProgress /> :
+        selected_genres.map(each => {
+          return <Chip 
+                    style={{margin: 2}} 
+                    label={each.name} 
+                    clickable 
+                    color='primary'
+                    size='small'
+                    key={each.id} />
+        })
+      }
+      
       { loading ? 
         <LinearProgress /> :
         genres.map(each => {
@@ -52,7 +77,8 @@ export default function Genres(props){
                     label={each.name} 
                     clickable 
                     size='small'
-                    key={each.id} />
+                    key={each.id}
+                    onClick={() => handle_add(each)}/>
         })
       }
     </div>

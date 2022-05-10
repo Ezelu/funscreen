@@ -18,7 +18,7 @@ export default function SingleContent(props) {
         
         <img src={ poster ? `${img_300}${poster}` : unavailable } alt={title} className='poster'/>
         <b className='title'> {title} </b>
-      <span className='subtitle'>
+        <span className='subtitle'>
         <span className='type'> {media_type === 'movie' ? 'Movie' : 'TV Series'} </span>
         <span className='date'> {date} </span>
       </span>

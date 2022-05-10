@@ -25,7 +25,6 @@ export default function Movies () {
     https://api.themoviedb.org/3/discover/movie?api_key=e002f08f46e0049891b3812857957fab&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate`);
 
     console.log(data)
-
     set_loading(false)
     set_contents(data.results)
     set_no_of_pages(data.total_pages)
@@ -64,9 +63,9 @@ export default function Movies () {
             return <SingleContent 
                       key = {each.id}
                       poster = {each.poster_path} 
-                      title = {each.title || each.name}
+                      title = {each.title}
                       date = {each.release_date || each.first_air_date}
-                      media_type = "movies"
+                      media_type = "movie"
                       vote_average = {each.vote_average}
                        />
           })
@@ -79,4 +78,4 @@ export default function Movies () {
 }
 
 
-// https://api.themoviedb.org/3/discover/movie?api_key=e002f08f46e0049891b3812857957fab&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate
+// https://api.themoviedb.org/3/discover/movie?api_key=e002f08f46e0049891b3812857957fab&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate
