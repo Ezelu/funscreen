@@ -42,7 +42,7 @@ export default function Series () {
 
   return (
     <div> 
-      <h2> Series Movies </h2>
+      <h2> TV Series </h2>
 
       <Genres 
         type='tv'
