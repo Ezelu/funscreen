@@ -240,11 +240,9 @@ export default function Search () {
           className="search_box"
           label="Search"
           variant="filled"
-          onChange = {(e) => set_search_text(e.target.value)}
-        />
-        <Button variant='contained' style={{
-          marginLeft: 10,
-        }}> 
+          onChange = {(e) => set_search_text(e.target.value)}/>
+
+        <Button variant='contained' style={{marginLeft: 10,}} onClick={fetchSearch}> 
           <SearchIcon />
         </Button>
       </div>
@@ -266,7 +264,7 @@ export default function Search () {
       
       <div className='trending'>
         {
-          search_text &&
+          // search_text &&
           loading ? <CircularProgress style={{
             display: 'flex',
             alignItems: 'center',
@@ -275,20 +273,25 @@ export default function Search () {
             marginTop: '5%',
             color: 'white'
           }}/> : 
-          contents.map(each => {
-            return <SingleContent 
-                      key = {each.id}
-                      poster = {each.poster_path} 
-                      title = {each.title}
-                      date = {each.release_date || each.first_air_date}
-                      media_type = "movie"
-                      vote_average = {each.vote_average}
-                       />
-          })
+
+          (
+            !contents ? 
+            <h3> Nothing Found! </h3> :
+            contents.map(each => {
+              return <SingleContent 
+                        key = {each.id}
+                        poster = {each.poster_path} 
+                        title = {each.title}
+                        date = {each.release_date || each.first_air_date}
+                        media_type = "movie"
+                        vote_average = {each.vote_average}
+                        />
+            })
+          )
         }
       </div>
 
-        {number_of_pages > 1 && (<CustomPagination set_page={set_page} numberOfPages={500}/>)}
+        {number_of_pages > 1 && (<CustomPagination set_page={set_page} numberOfPages={number_of_pages}/>)}
     </div>
   )
 }

@@ -9,3 +9,9 @@
   margin-bottom: 2%;
   margin: 0 25% 0;
 }
+
+h3 {
+  color: orange;
+  text-align: center;
+  margin: 0 auto;
+}
