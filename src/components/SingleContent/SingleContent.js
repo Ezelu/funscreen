@@ -74,7 +74,7 @@ export default function SingleContent(props) {
 
   const {id, poster, title, date, media_type, vote_average} = props;
 
-  
+  console.log(id)
   return (
     <ContentModal media_type={media_type} id={id}>
         <Badge badgeContent={vote_average} 
