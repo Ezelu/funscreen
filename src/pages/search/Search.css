@@ -1,0 +1,11 @@
+
+.container {
+  display: flex;
+  margin: 2% 0;
+}
+
+.tabs {
+  display: block;
+  margin-bottom: 2%;
+  margin: 0 25% 0;
+}
