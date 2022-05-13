@@ -276,7 +276,7 @@ export default function Search () {
 
           (
             !contents ? 
-            <h3> Nothing Found! </h3> :
+            "<h3> Nothing Found! </h3>" :
             contents.map(each => {
               return <SingleContent 
                         key = {each.id}
