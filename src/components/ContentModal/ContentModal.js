@@ -97,6 +97,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import './ContentModal.css';
 import axios from 'axios';
+import { img_500, unavailable, unavailableLandscape } from '../../config/config';
 
 
 
@@ -116,6 +117,11 @@ const style = {
   p: 4,
 };
 
+
+
+
+
+
 export default function ContentModal({children, media_type, id}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -126,33 +132,35 @@ export default function ContentModal({children, media_type, id}) {
   const [trailer, set_trailer] = React.useState('')
 
 
-
-
+console.log(id)
   const fetchInfo = async () => {
-    set_loading(true)
-    const {data} = await axios.get(
-      `https://api.themoviedb.org/3/${media_type}/${id}?api_key=e002f08f46e0049891b3812857957fab&language=en-US`);
+    // set_loading(true)
+    // const {data} = await axios.get(
+    //   `https://api.themoviedb.org/3/movie/3?api_key=e002f08f46e0049891b3812857957fab&language=en-US`);
 
-    set_loading(false);
-    set_contents(data);
-    console.log(data)
+    // set_loading(false);
+    // set_contents(data);
+    // console.log(data)
+
+
   }
 
 
-  const fetchTrailer = async () => {
-    set_loading2(true)
-    const {data} = await axios.get(
-      `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=e002f08f46e0049891b3812857957fab&language=en-US`);
+  // const fetchTrailer = async () => {
+    // set_loading2(true)
+    // const {data} = await axios.get(
+    //   `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=e002f08f46e0049891b3812857957fab&language=en-US`);
 
 
-    console.log(data.results[0]?.key)
-    set_loading2(false);
-    set_contents(data.results[0]?.key);
-  }
+    // console.log(data.results[0]?.key)
+    // set_loading2(false);
+    // set_contents(data.results[0]?.key);
+  // }
 
   React.useEffect(() => {
     fetchInfo();
-    fetchTrailer()
+
+    // fetchTrailer()
   }, [])
 
   
@@ -182,11 +190,16 @@ export default function ContentModal({children, media_type, id}) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          
+          {
+          contents &&
+          <div className="content_modal">
+            <img src={contents.poster_path ? `${img_500}/${contents.poster_path}`: unavailable} />
+
+          </div>
 
 
 
-
+          }
         </Box>
       </Modal>
     </div>
