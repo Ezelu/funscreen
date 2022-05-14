@@ -63,14 +63,16 @@ export default function Movies () {
             color: 'white'
           }}/> : 
           contents.map(each => {
+            console.log(each.media_type)
             return <SingleContent 
                       key = {each.id}
                       poster = {each.poster_path} 
-                      title = {each.title}
+                      title = {each.title || each.name}
                       date = {each.release_date || each.first_air_date}
-                      media_type = "movie"
+                      media_type = {each.media_type}
                       vote_average = {each.vote_average}
-                       />
+                      id={each.id}
+                    />
           })
         }
       </div>
