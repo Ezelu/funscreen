@@ -204,7 +204,17 @@ export default function ContentModal({children, media_type, id}) {
 
 
             <div className="content_about">
-              
+              <span className='content_title'> 
+                {contents.name || contents.title}
+                (
+                  {(
+                    contents.first_air_date ||
+                    contents.release_date ||
+                    "....."
+                  ).substring(0, 4)}
+                )
+              </span>
+
             </div>
 
 
