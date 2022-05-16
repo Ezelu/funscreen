@@ -132,29 +132,28 @@ export default function ContentModal({children, media_type, id}) {
   const [trailer, set_trailer] = React.useState('')
 
 
-  console.log(id)
   const fetchInfo = async () => {
-    // set_loading(true)
-    // const {data} = await axios.get(
-    //   `https://api.themoviedb.org/3/movie/3?api_key=e002f08f46e0049891b3812857957fab&language=en-US`);
+    set_loading(true)
+    const {data} = await axios.get(
+      `https://api.themoviedb.org/3/${media_type}/${id}?api_key=e002f08f46e0049891b3812857957fab&language=en-US`);
 
-    // set_loading(false);
-    // set_contents(data);
-    // console.log(data)
+    set_loading(false);
+    set_contents(data);
+    console.log(data)
 
 
   }
 
 
   const fetchTrailer = async () => {
-    // set_loading2(true)
-    // const {data} = await axios.get(
-    //   `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=e002f08f46e0049891b3812857957fab&language=en-US`);
+    set_loading2(true)
+    const {data} = await axios.get(
+      `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=e002f08f46e0049891b3812857957fab&language=en-US`);
 
 
-    // console.log(data.results[0]?.key)
-    // set_loading2(false);
-    // set_contents(data.results[0]?.key);
+    console.log(data.results[0]?.key)
+    set_loading2(false);
+    set_trailer(data.results[0]?.key);
   }
 
   React.useEffect(() => {
@@ -182,8 +181,7 @@ export default function ContentModal({children, media_type, id}) {
 
   return (
     <div>
-      {/* <Button onClick={handleOpen} className='media'>  </Button> */}
-      <span onClick={handleOpen} className='media'>  </span>
+      <Button onClick={handleOpen} className='media' className='media'> {children} </Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -194,9 +192,25 @@ export default function ContentModal({children, media_type, id}) {
           {
           contents &&
           <div className="content_modal">
-            {/* <img src={contents.poster_path ? `${img_500}/${contents.poster_path}`: unavailable} /> */}
+            {/* <img
+              className = "content_portrait"
+              alt = {contents.name || contents.title}
+              src={contents.poster_path ? `${img_500}/${contents.poster_path}`: unavailable} /> */}
+
+            <img
+              className = "content_landscape"
+              alt = {contents.name || contents.title}
+              src={contents.backdrop_path ? `${img_500}/${contents.backdrop_path}`: unavailableLandscape} />
+
+
+            <div className="content_about">
+              
+            </div>
+
 
           </div>
+
+
 
 
 

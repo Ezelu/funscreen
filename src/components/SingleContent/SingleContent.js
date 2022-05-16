@@ -77,7 +77,8 @@ export default function SingleContent(props) {
 
   console.log(id)
   return (
-    <div className='media' media_type={media_type} id={id}>
+    <ContentModal media_type={media_type} id={id}>
+    {/* <div className='media' media_type={media_type} id={id}> */}
         <Badge badgeContent={vote_average} 
         color={vote_average > 6 ? 'primary' : 'secondary' }/>
         
@@ -89,15 +90,19 @@ export default function SingleContent(props) {
       </span>
 
 
-      <ContentModal>
+      {/* <ContentModal media_type={media_type} id={id}>
         <Add className="button" style={{
           background: 'orange',
-          position: 'absolute',
-          bottom: 5,
-          left: 5,
+          // position: 'absolute',
+          // bottom: 5,
+          // left: 5,
           borderRadius: '100%'
         }}> More... </Add>
-      </ContentModal>
-    </div>
+      </ContentModal> */}
+
+
+      {/* <ContentModal media_type={media_type} id={id} />  */}
+    {/* </div> */}
+    </ContentModal>
   )
 }
