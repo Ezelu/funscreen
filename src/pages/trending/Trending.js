@@ -172,7 +172,7 @@ export default function Trending () {
             color: 'white'
           }}/> : 
           contents.map(each => {
-            return <SingleContent 
+            return  <SingleContent 
                       key = {each.id}
                       poster = {each.poster_path} 
                       title = {each.title || each.name}
@@ -180,7 +180,7 @@ export default function Trending () {
                       media_type = {each.media_type}
                       vote_average = {each.vote_average}
                       id={each.id}
-                       />
+                    />
           })
         }
       </div>

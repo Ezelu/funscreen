@@ -93,7 +93,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 import Modal from '@mui/material/Modal';
 import './ContentModal.css';
 import axios from 'axios';
@@ -112,7 +112,6 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: "90%",
   bgcolor: '#39445a',
-  // border: '2px solid #000',
   boxShadow: 24,
   p: 4,
 };
@@ -132,6 +131,7 @@ export default function ContentModal({children, media_type, id}) {
   const [trailer, set_trailer] = React.useState('')
 
 
+  console.log(media_type)
   const fetchInfo = async () => {
     set_loading(true)
     const {data} = await axios.get(
@@ -180,8 +180,8 @@ export default function ContentModal({children, media_type, id}) {
 
 
   return (
-    <div>
-      <Button onClick={handleOpen} className='media' className='media'> {children} </Button>
+    <>
+      <div onClick={handleOpen} className='media' className='media'> {children} </div>
       <Modal
         open={open}
         onClose={handleClose}
@@ -192,10 +192,10 @@ export default function ContentModal({children, media_type, id}) {
           {
           contents &&
           <div className="content_modal">
-            {/* <img
+            <img
               className = "content_portrait"
               alt = {contents.name || contents.title}
-              src={contents.poster_path ? `${img_500}/${contents.poster_path}`: unavailable} /> */}
+              src={contents.poster_path ? `${img_500}/${contents.poster_path}`: unavailable} />
 
             <img
               className = "content_landscape"
@@ -215,6 +215,21 @@ export default function ContentModal({children, media_type, id}) {
                 )
               </span>
 
+              {
+                contents.tagline &&
+                  <i className='tagline'> {contents.tagline} </i>
+              }
+
+              <span class="content_description">
+                {contents.overview}
+              </span>
+
+              {/* <div>
+
+              </div> */}
+
+              <Button variant='contained' startIcon={<YouTubeIcon />} target="_blank" href={`https://youtube.com/watch?v=${trailer}`}> Watch Trailer </Button>
+
             </div>
 
 
@@ -227,7 +242,7 @@ export default function ContentModal({children, media_type, id}) {
           }
         </Box>
       </Modal>
-    </div>
+    </>
   );
 }
 

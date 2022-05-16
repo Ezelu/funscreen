@@ -69,8 +69,9 @@ export default function Series () {
                       poster = {each.poster_path} 
                       title = {each.name}
                       date = {each.release_date || each.first_air_date}
-                      media_type = "TV Series"
+                      media_type = "tv"
                       vote_average = {each.vote_average}
+                      id = {each.id}
                        />
           })
         }

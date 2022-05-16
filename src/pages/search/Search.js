@@ -187,7 +187,7 @@ export default function Search () {
 
   const [type, set_type] = useState(0);
   const [page, set_page] = useState(1);
-  const [search_text, set_search_text] = useState('sample');
+  const [search_text, set_search_text] = useState('.');
   const [contents, set_contents] = useState();
   const [number_of_pages, set_number_of_pages] = useState();
   const [loading, set_loading] = useState(false);
@@ -285,6 +285,7 @@ export default function Search () {
                         date = {each.release_date || each.first_air_date}
                         media_type = "movie"
                         vote_average = {each.vote_average}
+                        id = {each.id}
                         />
             })
           )

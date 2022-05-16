@@ -63,13 +63,13 @@ export default function Movies () {
             color: 'white'
           }}/> : 
           contents.map(each => {
-            console.log(each.media_type)
             return <SingleContent 
                       key = {each.id}
                       poster = {each.poster_path} 
                       title = {each.title || each.name}
                       date = {each.release_date || each.first_air_date}
-                      media_type = {each.media_type}
+                      // media_type = {each.media_type}
+                      media_type = 'movie'
                       vote_average = {each.vote_average}
                       id={each.id}
                     />
@@ -82,5 +82,3 @@ export default function Movies () {
   )
 }
 
-
-// https://api.themoviedb.org/3/discover/movie?api_key=e002f08f46e0049891b3812857957fab&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate
