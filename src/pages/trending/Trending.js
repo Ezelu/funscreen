@@ -40,7 +40,7 @@ export default function Trending () {
 
 
   return (
-    <div className='container'>
+    <div>
       <h2> Trending Today </h2>
       <div className='trending'>
         {
