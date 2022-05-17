@@ -8,4 +8,10 @@
 .carousel_img {
   border-radius: 10px;
   margin-bottom: 2%;
+  cursor: pointer;
+}
+
+.carousel_img:hover{
+  opacity: 0.8;
+  filter: grayscale(100);
 }

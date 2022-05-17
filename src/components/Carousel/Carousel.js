@@ -26,8 +26,13 @@ const Carousel = ({media_type, id}) => {
     set_credits(data.cast)
   }
 
+  // const x = ["a", "b", "c"];
+  // const y = x.join("+")
+  // const z = x.reduce((a, b) => a + "+" + b)
+  // console.log(y)
+
   const items = credits?.map(each => {
-    console.log(each);
+    // console.log((each?.name.split()));
     return (
       <div className="carousel_item">
         <img
@@ -35,6 +40,11 @@ const Carousel = ({media_type, id}) => {
           alt = {each.name}
           onDragStart={handleDragStart}
           className='carousel_img'
+          onClick={() => {
+            const x = each?.name.split();
+            const y = x.join("+");
+            window.open(`https://www.google.com/search?q=${y}`, '_blank')
+          }}
         />
         <p align="center" className="carousel_text"> <small>  {each?.name} </small>  </p>
         <span align='center' style={{color: 'grey'}}> <small> { each.character } </small></span>
@@ -69,7 +79,8 @@ const Carousel = ({media_type, id}) => {
       disableDotsControls
       responsive = {responsive}
       infinite
-      items={items}/>
+      items={items}
+      />
   );
 }
 
