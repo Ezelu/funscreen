@@ -3,12 +3,10 @@
   cursor: pointer;
   position: fixed;
   top: 0;
-  display: flex;
-  flex-direction: row;
   text-transform: uppercase;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 3vh;
-  padding: 1% 0;
+  font-size: 1.5em;
+  /* padding: 0.5% 0; */
   box-shadow: 0px 1px 5px black;
   z-index: 100;
   background: #39445a;
@@ -17,11 +15,26 @@
 
 h1 {
   text-align: center;
-  width: 95%;
   color: white;
 }
 
-.mode_changer {
-  margin-left: 'auto'
+
+
+
+
+
+
+
+
+@media (max-width: 530px){
+  h1{
+    padding: 2% 0;
+    font-size: 1.4em;
+  }
 }
 
+@media (max-width: 350px){
+  h1{
+    font-size: 1.4em;
+  }
+}
