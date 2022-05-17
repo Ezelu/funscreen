@@ -37,6 +37,7 @@ const Carousel = ({media_type, id}) => {
           className='carousel_img'
         />
         <p align="center" className="carousel_text"> <small>  {each?.name} </small>  </p>
+        <span align='center' style={{color: 'grey'}}> <small> { each.character } </small></span>
     </div>
     )
   })
@@ -68,7 +69,7 @@ const Carousel = ({media_type, id}) => {
       disableDotsControls
       responsive = {responsive}
       infinite
-      items={items} />
+      items={items}/>
   );
 }
 
