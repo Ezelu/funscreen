@@ -59,11 +59,15 @@
   display: none;
 }
 
+.button {
+  width: 100%;
+  background: orange;
+  height: 40px;
+}
 
-
-
-
-
+.button:hover {
+  background: darkblue;
+}
 
 
 
@@ -97,3 +101,43 @@
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media (min-width: 835px) {
+  .content_landscape {
+    display: none;
+  }
+  .content_portrait{
+    display: flex;
+    width: 38%;
+  }
+  .content_modal{
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+  .content_about{
+    width: 58%;
+    padding: 0;
+    height: 100%;
+  }
+  .content_title{
+    font-size: 3.5vw;
+  }
+  .content_description {
+    font-size: 22px;
+  }
+
+} */
