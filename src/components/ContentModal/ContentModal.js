@@ -356,7 +356,7 @@ export default function ContentModal({children, media_type, id}) {
 
             <div className="content_about">
               <h1 className='content_title'> 
-                {(contents.name || contents.title).toUpperCase()}
+                {(contents.name || contents.title).toUpperCase()} &nbsp;
                 (
                   {(
                     contents.first_air_date ||
