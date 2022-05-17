@@ -65,6 +65,9 @@ import './SingleContent.css'
 import { img_300, unavailable } from '../../config/config'
 import { Badge } from '@material-ui/core'
 import ContentModal from '../ContentModal/ContentModal';
+// import { img_500, unavailable, unavailableLandscape } from '../../config/config';
+
+
 
 
 

@@ -125,8 +125,8 @@ img {
 
 @media (max-width: 450px) {
   .media {
-    width: 80%;
-    margin: 0 10%;
+    width: 60%;
+    margin: 0 20%;
     margin-bottom: 5%;
   }
 
@@ -140,6 +140,8 @@ img {
   }
 
 }
+
+
 
 
 
