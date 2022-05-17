@@ -80,12 +80,20 @@
     width: 38%;
   }
   .content_modal{
+    display: flex;
     flex-direction: row;
-    justify-content: none;
-    padding: 10px 0;
+    justify-content: space-between;
+  }
+  .content_modal img{
+    width: 100%;
+  }
+
+  .img_container {
+    width: 40%;
+    padding-right: 2%;
   }
   .content_about{
-    width: 58%;
+    width: 60%;
     padding: 0;
     height: 100%;
   }

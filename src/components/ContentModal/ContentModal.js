@@ -340,15 +340,18 @@ export default function ContentModal({children, media_type, id}) {
           {
           contents &&
           <div className="content_modal">
-            <img
-              className = "content_portrait"
-              alt = {contents.name || contents.title}
-              src={contents.poster_path ? `${img_500}/${contents.poster_path}`: unavailable} />
+            <div className='img_container'> 
+              <img
+                className = "content_portrait"
+                alt = {contents.name || contents.title}
+                src={contents.poster_path ? `${img_500}/${contents.poster_path}`: unavailable} />
 
-            <img
-              className = "content_landscape"
-              alt = {contents.name || contents.title}
-              src={contents.backdrop_path ? `${img_500}/${contents.backdrop_path}`: unavailableLandscape} />
+              <img
+                className = "content_landscape"
+                alt = {contents.name || contents.title}
+                src={contents.backdrop_path ? `${img_500}/${contents.backdrop_path}`: unavailableLandscape} />
+            </div>
+ 
 
 
             <div className="content_about">
