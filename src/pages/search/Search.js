@@ -278,10 +278,11 @@ export default function Search () {
             !contents ? 
             "<h3> Nothing Found! </h3>" :
             contents.map(each => {
+              console.log(each)
               return <SingleContent 
                         key = {each.id}
                         poster = {each.poster_path} 
-                        title = {each.title}
+                        title = {each.title || each.name}
                         date = {each.release_date || each.first_air_date}
                         media_type = "movie"
                         vote_average = {each.vote_average}
