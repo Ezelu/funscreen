@@ -256,7 +256,7 @@ const style = {
   width: "90%",
   height: "80%",
   bgcolor: '#39445a',
-  // boxShadow: 24,
+  boxShadow: 24,
   overflowY: 'auto',
   padding: 4,
   border: 0,
@@ -355,8 +355,8 @@ export default function ContentModal({children, media_type, id}) {
 
 
             <div className="content_about">
-              <span className='content_title'> 
-                {contents.name || contents.title}
+              <h1 className='content_title'> 
+                {(contents.name || contents.title).toUpperCase()}
                 (
                   {(
                     contents.first_air_date ||
@@ -364,12 +364,14 @@ export default function ContentModal({children, media_type, id}) {
                     "....."
                   ).substring(0, 4)}
                 )
-              </span>
-
-              {
-                contents.tagline &&
+              </h1>
+              
+              <p>
+                {
+                  contents.tagline &&
                   <i className='tagline'> {contents.tagline} </i>
-              }
+                }
+              </p>
 
               <span class="content_description">
                 {contents.overview}
@@ -379,7 +381,20 @@ export default function ContentModal({children, media_type, id}) {
                 <Carousel media_type={media_type} id={id} />
               </div>
 
-              <Button variant='contained' startIcon={<YouTubeIcon />} target="_blank" href={`https://youtube.com/watch?v=${trailer}`} className='button'> Watch Trailer </Button>
+              <Button 
+                variant='contained' 
+                startIcon={<YouTubeIcon />} 
+                target="_blank" 
+                href={`https://youtube.com/watch?v=${trailer}`} 
+                className='button'
+                style={{
+                  background: 'darkorange',
+                  '&:hover': {
+                    background: 'orange'
+                  }
+                }}> 
+                  Watch Trailer 
+                </Button>
 
             </div>
 
