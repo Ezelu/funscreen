@@ -40,6 +40,7 @@ export default function App () {
             <Route path="/search" element={<Search />} />
             <Route path="/movies" element={<Movies />} />
           </Routes>
+
         </Container>
       </div>
     </>
