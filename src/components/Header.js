@@ -8,7 +8,7 @@ export default function Header () {
 
   return (
     <div className='header'>
-      <h1 onClick={() => window.scroll(0, 0)}> Fun Screen </h1>
+      <h1 onClick={() => window.scroll(0, 0)}> Screenify </h1>
    </div>
   )
 }
