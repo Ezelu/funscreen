@@ -26,13 +26,8 @@ const Carousel = ({media_type, id}) => {
     set_credits(data.cast)
   }
 
-  // const x = ["a", "b", "c"];
-  // const y = x.join("+")
-  // const z = x.reduce((a, b) => a + "+" + b)
-  // console.log(y)
 
   const items = credits?.map(each => {
-    // console.log((each?.name.split()));
     return (
       <div className="carousel_item">
         <img
