@@ -1,13 +1,17 @@
 # SCREENIFY
 
-Fun screen is a web based tool that gives movie recommendations and also trending movies and TV series. Users typically use it to watch trailers of movies, see casts, click on em to Google about them before downloading the movie
+Fun screen is a web based tool that gives movie recommendations and also trending movies and TV series.  
+Users typically use it to do the following:
+- Watch trailers of movies
+- See casts
+- Click on casts to Google about them before downloading the movie
 
 ## FEATURES
 > Shows trending moviees and tv series at any time it's been accessed
 > 
 > Shows casts of a particular movie
 >
-> Trailers can be watched before download
+> Shows Trailers before download
 
 ## HOW TO RUN THE APP
 > Fork and Clone the Repository to your Local Machine
